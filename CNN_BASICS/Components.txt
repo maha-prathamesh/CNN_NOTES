@@ -1,0 +1,40 @@
+receptive fields : how much it[kernal] can look in the image.
+	7X7 --> 3X3 = 5X5 --> 3X3 = 3X3
+		K1			   K2
+		 
+Local Rec Field : k1 --> 7X7, k2 --> 5X5
+	Global Rec Field : k1 --> X , k2 --> 5X5, 7X7
+
+
+[]
+Design Network:
+	1) I size
+	2) O size
+	3) Conv layers [5-15], 15-30 rare[1k X 1k].
+	4) General resolution: 224, 256, 400, 512, 606
+
+Max Pooling Layer:
+	Reduce dimension, reduce calculation.
+
+
+Calculation:
+	1. n-f+2p
+	 ---------- + 1
+	     s
+
+
+Tunable/ Hyper Parameters:
+	No of conv layers.
+	Kernel size [3,5,7]
+	Stride (2,3[rare])
+	Padding, [same, valid]
+	No of Nu in Dense Layer[64,128] 
+	Activation Function[relu]
+	Loss function[cat cross]
+	Optimiser[adam, SGD]
+	Image resolution
+	
+200|198|196|MP|......|1
+
+Data sets:
+MNIST   70K 28X28X1
